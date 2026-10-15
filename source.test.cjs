@@ -1,0 +1,10 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.join(__dirname,'..');
+const js=fs.readFileSync(path.join(root,'src/app.js'),'utf8');
+const html=fs.readFileSync(path.join(root,'index.html'),'utf8');
+test('source includes search and stress functions',()=>{for(const name of ['solveModel','auditFixedPlan','packetDP'])assert.match(js,new RegExp(name));});
+test('product-level deposit fields are present',()=>{assert.match(js,/depositFace/);assert.match(js,/depositPaid/);});
+test('HTML references extracted assets',()=>{assert.match(html,/src\/app\.js/);assert.match(html,/src\/styles\.css/);});

@@ -1,0 +1,11 @@
+{
+  "name": "double11-quant-lab-v5",
+  "version": "5.0.0",
+  "private": true,
+  "description": "Editable Double 11 discount optimizer, original v5 extracted for Codex",
+  "scripts": {
+    "check": "node --check src/app.js",
+    "test": "node --test tests/*.test.cjs",
+    "start": "python3 -m http.server 8000"
+  }
+}
